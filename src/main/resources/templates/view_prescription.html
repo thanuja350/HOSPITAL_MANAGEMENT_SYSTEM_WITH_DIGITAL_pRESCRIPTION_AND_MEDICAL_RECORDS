@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Prescriptions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h3 class="text-primary mb-4">Prescriptions</h3>
+
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Medicines</th>
+                    <th>Dosage</th>
+                    <th>Next Visit Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="p : ${prescriptions}">
+                    <td th:text="${p.medicines}"></td>
+                    <td th:text="${p.dosage}"></td>
+                    <td th:text="${p.nextVisitDate}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{/patient/dashboard/{id}(id=${patientId})}"
+           class="btn btn-secondary">
+            Back
+        </a>
+        <a th:href="@{/patient/downloadPrescription/{id}(id=${patientId})}"
+   class="btn btn-success mb-3">
+   Download PDF
+</a>
+    </div>
+
+</div>
+
+</body>
+</html>

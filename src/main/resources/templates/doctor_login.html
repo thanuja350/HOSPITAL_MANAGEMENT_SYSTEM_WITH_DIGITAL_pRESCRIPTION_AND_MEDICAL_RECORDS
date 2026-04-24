@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Doctor Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand"
+           th:href="@{/}">Digital Prescription</a>
+    </div>
+</nav>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <div class="card shadow p-4">
+
+                <h3 class="text-center text-primary mb-4">
+                    Doctor Login
+                </h3>
+
+                <form th:action="@{/doctor/login}" method="post">
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="text"
+                               name="email"
+                               class="form-control"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password"
+                               name="password"
+                               class="form-control"
+                               required>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary w-100">
+                        Login
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

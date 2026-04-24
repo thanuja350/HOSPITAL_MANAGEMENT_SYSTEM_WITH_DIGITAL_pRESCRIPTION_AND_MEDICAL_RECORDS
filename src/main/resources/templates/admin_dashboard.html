@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <span class="navbar-brand">Digital Prescription</span>
+
+        <div>
+            <a class="btn btn-light btn-sm me-2" href="/admin/dashboard">Admin</a>
+            <a class="btn btn-light btn-sm me-2" href="/doctor/login">Doctor</a>
+            <a class="btn btn-light btn-sm" href="/patient/login">Patient</a>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container mt-5">
+
+    <h2 class="text-primary mb-4">Admin Dashboard</h2>
+
+    <div class="row g-4">
+
+        <!-- ADD DOCTOR -->
+        <div class="col-md-4">
+            <div class="card shadow p-4 text-center">
+
+                <h5>Add Doctor</h5>
+
+                <a href="/admin/addDoctor"
+                   class="btn btn-primary mt-3">
+                    Add Doctor
+                </a>
+
+            </div>
+        </div>
+
+        <!-- VIEW DOCTORS -->
+        <div class="col-md-4">
+            <div class="card shadow p-4 text-center">
+
+                <h5>View Doctors</h5>
+
+                <a href="/admin/viewDoctors"
+                   class="btn btn-info mt-3">
+                    View Doctors
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ADD PATIENT -->
+        <div class="col-md-4">
+            <div class="card shadow p-4 text-center">
+
+                <h5>Add Patient</h5>
+
+                <a href="/admin/addPatient"
+                   class="btn btn-success mt-3">
+                    Add Patient
+                </a>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow p-4 text-center">
+
+                <h5>View Patient</h5>
+
+                <a href="/admin/viewPatients"
+                   class="btn btn-info mt-3">
+                    View Patients
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

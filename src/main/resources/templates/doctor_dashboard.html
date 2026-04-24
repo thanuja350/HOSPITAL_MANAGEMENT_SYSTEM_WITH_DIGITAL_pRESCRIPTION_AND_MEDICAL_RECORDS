@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout :: layout(~{::section})">
+
+<section>
+
+<h2 class="text-primary mb-4">Doctor Dashboard</h2>
+
+<div class="row">
+
+    <!-- VIEW APPOINTMENTS -->
+    <div class="col-md-4">
+        <div class="card shadow p-4 text-center">
+            <h5>Appointments</h5>
+            <p>View and manage patient requests</p>
+
+            <!-- ✅ FIXED URL -->
+            <a href="/doctor/viewAppointments" class="btn btn-success">
+                View Appointments
+            </a>
+        </div>
+    </div>
+
+    <!-- INFO CARD -->
+    <div class="col-md-4">
+        <div class="card shadow p-4 text-center">
+            <h5>Consultation</h5>
+            <p>Accept appointment to start video call</p>
+
+            <button class="btn btn-secondary" disabled>
+                Start from Appointments
+            </button>
+        </div>
+    </div>
+
+    <!-- INFO CARD -->
+    <div class="col-md-4">
+        <div class="card shadow p-4 text-center">
+            <h5>Prescription & Payment</h5>
+            <p>Generated automatically after consultation</p>
+
+            <button class="btn btn-secondary" disabled>
+                Auto Flow
+            </button>
+        </div>
+    </div>
+
+</div>
+
+</section>
+</html>

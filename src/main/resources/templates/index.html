@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout">
+
+<section>
+
+<div class="text-center mt-5">
+
+    <h1 class="text-primary mb-3">Digital Prescription System</h1>
+    <p class="lead">Fast • Secure • Smart Healthcare</p>
+
+</div>
+
+<div class="row mt-5 text-center">
+
+    <div class="col-md-4">
+        <div class="card shadow p-4">
+            <h4>Admin</h4>
+            <a href="/admin/login" class="btn btn-primary mt-3">Login</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow p-4">
+            <h4>Doctor</h4>
+            <a href="/doctor/login" class="btn btn-success mt-3">Login</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow p-4">
+            <h4>Patient</h4>
+            <a href="/patient/login" class="btn btn-warning mt-3">Login</a>
+        </div>
+    </div>
+
+</div>
+
+</section>
+</html>

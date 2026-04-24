@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Doctor</title>
+</head>
+<body>
+
+<h2>Add Doctor</h2>
+
+<form th:action="@{/admin/saveDoctor}" 
+      th:object="${doctor}" 
+      method="post">
+
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" />
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" />
+    <br><br>
+
+    <label>Qualification:</label>
+    <input type="text" th:field="*{qualification}" />
+    <br><br>
+
+    <label>Specialization:</label>
+    <input type="text" th:field="*{specialization}" />
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" th:field="*{password}" />
+    <br><br>
+
+    <button type="submit">Save Doctor</button>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Doctor - Appointments</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .card {
+            border-radius: 12px;
+        }
+        .table thead {
+            background-color: #212529;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container d-flex justify-content-between">
+        <span class="navbar-brand">Doctor - Appointments</span>
+
+        <a th:href="@{/doctor/dashboard}"
+           class="btn btn-light btn-sm">
+            Back
+        </a>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h3 class="text-primary mb-4">
+            Patient Appointment Requests
+        </h3>
+
+        <!-- TABLE -->
+        <table class="table table-bordered text-center align-middle">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Patient Name</th>
+                    <th>Symptoms</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!-- LOOP -->
+                <tr th:each="a : ${appointments}">
+
+                    <td th:text="${a.id}"></td>
+
+                    <td th:text="${a.patient.name}"></td>
+
+                    <td th:text="${a.symptoms}"></td>
+
+                    <!-- STATUS COLORS -->
+                    <td>
+                        <span th:if="${a.status == 'PENDING'}"
+                              class="badge bg-warning text-dark">PENDING</span>
+
+                        <span th:if="${a.status == 'ACCEPTED'}"
+                              class="badge bg-success">ACCEPTED</span>
+
+                        <span th:if="${a.status == 'REJECTED'}"
+                              class="badge bg-danger">REJECTED</span>
+                    </td>
+
+                    <!-- ACTION BUTTONS -->
+                    <td>
+
+                        <div th:if="${a.status == 'PENDING'}">
+
+                            <a th:href="@{/doctor/accept/{id}(id=${a.id})}"
+                               class="btn btn-success btn-sm me-2">
+                                Accept
+                            </a>
+
+                            <a th:href="@{/doctor/reject/{id}(id=${a.id})}"
+                               class="btn btn-danger btn-sm">
+                                Reject
+                            </a>
+
+                        </div>
+
+                        <div th:if="${a.status != 'PENDING'}">
+                            <span class="text-muted">Action Done</span>
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <!-- EMPTY CASE -->
+                <tr th:if="${#lists.isEmpty(appointments)}">
+                    <td colspan="5" class="text-muted">
+                        No appointment requests yet
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+</body>
+</html>
